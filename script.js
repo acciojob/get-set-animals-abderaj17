@@ -10,7 +10,7 @@ class Animal{
 	  set species(value) {
         this._species = value;
     }
-    makeSound=()=>{
+    makeSound(){
         console.log(`${this.species} makes a sound.`)
     }
 }
@@ -18,7 +18,7 @@ class Cat extends Animal{
     constructor(species){
         super(species);
     }
-    purr=()=>{
+    purr(){
         console.log("purr")
     }
 }
@@ -26,7 +26,7 @@ class Dog extends Animal{
     constructor(species){
         super(species);
     }
-    bark = ()=>{
+    bark(){
         console.log("woof");
     }
 }
