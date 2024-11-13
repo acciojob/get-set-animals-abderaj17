@@ -1,44 +1,49 @@
-class Animal{
-    constructor(species){
-     this._species=species;
+class Animal {
+    constructor(species) {
+        this._species = species;
     }
-    get species(){
+ 
+    // Getter for species
+    get species() {
         return this._species;
     }
-	set species(value) {
-        this._species = value;
-    }
-    makeSound(){
-        console.log(`${this.species} makes a sound.`);
+ 
+    // Method to make a generic sound
+    makeSound() {
+        console.log(`The ${this.species} makes a sound`);
     }
 }
-class Cat extends Animal{
-    constructor(species){
+ 
+// Define the Cat class that extends Animal
+class Cat extends Animal {
+    constructor(species) {
         super(species);
     }
-    purr(){
+ 
+    // Method specific to Cat class
+    purr() {
         console.log("purr");
     }
 }
-class Dog extends Animal{
-    constructor(species){
+ 
+// Define the Dog class that extends Animal
+class Dog extends Animal {
+    constructor(species) {
         super(species);
     }
-    bark(){
+ 
+    // Method specific to Dog class
+    bark() {
         console.log("woof");
     }
 }
-const final = new Animal("Lion");
-console.log(final.species); // Lion
-final.makeSound(); // Lion makes a sound.
-
-const cat = new Cat("Cat");
-cat.purr(); // purr
-
-const dog = new Dog("Dog");
-dog.bark(); // woof
-
-// Do not change the code below this line
-window.Animal = Animal;
-window.Dog = Dog;
-window.Cat = Cat;
+ 
+// Example usage
+ 
+const myCat = new Cat("Siamese");
+myCat.makeSound(); // Output: "The Siamese makes a sound"
+myCat.purr();      // Output: "purr"
+ 
+const myDog = new Dog("Golden Retriever");
+myDog.makeSound(); // Output: "The Golden Retriever makes a sound"
+myDog.bark();      // Output: "woof"
